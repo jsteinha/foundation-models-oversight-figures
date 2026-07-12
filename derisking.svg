@@ -1,62 +1,111 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" role="img" aria-label="Staged de-risking: three stages of scale-up (Stage 1 individual tasks, Stage 2 cross-task transfer, Stage 3 zero-shot) with what we check at each">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 445" width="860" height="445" role="img" aria-label="Staged de-risking: each stage turns on a new capability">
   <style>
-    .stage { fill:#eaf6eb; stroke:#3d6342; stroke-width:1.4; }
-    .caption { font: 700 15px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
-    .stagenum { font: 700 22px 'Helvetica Neue', Arial, sans-serif; fill:#3d6342; text-anchor:middle; }
-    .stagelbl { font: 600 13px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
-    .sub { font: 400 11px 'Helvetica Neue', Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
-    .item { font: 400 11px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:start; }
-    .itemhdr { font: 600 11px 'Helvetica Neue', Arial, sans-serif; fill:#3d6342; text-anchor:start; }
-    .arr { stroke:#5b6770; stroke-width:1.4; fill:none; }
+    .title { font: 700 16px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+    .subtitle { font: 400 12px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
+    .axisline { stroke:#5b6770; stroke-width:1; fill:none; }
+    .tickmark { stroke:#5b6770; stroke-width:1; }
+    .axislbl { font: 400 10.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#3a4148; text-anchor:middle; }
+    .axistitle { font: 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#3a4148; text-anchor:middle; }
+    .yend { font: 400 10.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#6b7480; text-anchor:end; }
+    .yaxistitle { font: 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
+    .bandnum { font: 700 12.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+    .bandanalog { font: italic 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#6b7480; text-anchor:middle; }
+    .plateau { fill:none; stroke:#8a95a2; stroke-width:1; stroke-dasharray:2,3; }
+    .loss { fill:none; stroke:#8a95a2; stroke-width:1.6; stroke-dasharray:5,4; stroke-linecap:round; }
+    .ind { fill:none; stroke:#3d8f6b; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
+    .ct  { fill:none; stroke:#3d708f; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
+    .zs  { fill:none; stroke:#3d5b8f; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
+    .curvelbl { font: 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; text-anchor:start; }
+    .indfill  { fill:#276b4d; }
+    .ctfill   { fill:#275970; }
+    .zsfill   { fill:#274670; }
+    .lossfill { fill:#5b6770; }
+    .tile { fill:#ffffff; stroke:#c9d0d6; stroke-width:1; }
+    .tilenum   { font: 700 12.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+    .tilescale { font: 400 10.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#3a4148; text-anchor:middle; }
+    .tilegate  { font: 600 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; text-anchor:middle; }
   </style>
-  <defs>
-    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
-      <path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/>
-    </marker>
-  </defs>
 
-  <text class="caption" x="360" y="24">Staged de-risking: what we check at each stage before scaling up</text>
+  <!-- Title & subtitle -->
+  <text class="title"    x="430" y="22">Staged de-risking: each stage turns on a new capability</text>
+  <text class="subtitle" x="430" y="40">We only scale up when the previous stage cleared its gate.</text>
 
-  <!-- Stage 1 -->
-  <rect class="stage" x="30" y="50" width="200" height="260" rx="8"/>
-  <text class="stagenum" x="130" y="82">Stage 1</text>
-  <text class="stagelbl" x="130" y="102">Individual tasks</text>
-  <text class="sub" x="130" y="122">~10k seq · ~1–8B params</text>
-  <line x1="45" y1="140" x2="215" y2="140" stroke="#a8c9ac" stroke-width="1"/>
-  <text class="itemhdr" x="45" y="162">What we check:</text>
-  <text class="item" x="45" y="184">• Held-out loss ↓ steadily</text>
-  <text class="item" x="45" y="206">• Easy tasks: success rate ↑</text>
-  <text class="item" x="45" y="228">• Medium tasks: PRBO ↑</text>
-  <text class="item" x="45" y="250">• Hard tasks: PRBO starts</text>
-  <text class="item" x="55" y="266">to move</text>
+  <!-- Stage bands (three decades of x, progressively deeper tints) -->
+  <rect x="60"  y="60" width="210" height="260" fill="#eaf6ea"/>
+  <rect x="270" y="60" width="210" height="260" fill="#e4f0f0"/>
+  <rect x="480" y="60" width="210" height="260" fill="#e4ecf6"/>
 
-  <!-- Stage 2 -->
-  <rect class="stage" x="260" y="50" width="200" height="260" rx="8"/>
-  <text class="stagenum" x="360" y="82">Stage 2</text>
-  <text class="stagelbl" x="360" y="102">Cross-task transfer</text>
-  <text class="sub" x="360" y="122">~100k seq · ~8–30B params</text>
-  <line x1="275" y1="140" x2="445" y2="140" stroke="#a8c9ac" stroke-width="1"/>
-  <text class="itemhdr" x="275" y="162">What we check:</text>
-  <text class="item" x="275" y="184">• Training works on ~100 tasks</text>
-  <text class="item" x="275" y="206">• Individual tasks learned</text>
-  <text class="item" x="275" y="228">• Positive transfer:</text>
-  <text class="item" x="285" y="244">fine-tune beats stage 1</text>
-  <text class="item" x="275" y="266">• Downstream metrics ↑</text>
+  <!-- Band labels at top of each band -->
+  <text class="bandnum"    x="165" y="78">Stage 1 • individual tasks</text>
+  <text class="bandanalog" x="165" y="94">≈ GPT-1</text>
+  <text class="bandnum"    x="375" y="78">Stage 2 • cross-task transfer</text>
+  <text class="bandanalog" x="375" y="94">≈ GPT-2</text>
+  <text class="bandnum"    x="585" y="78">Stage 3 • zero-shot</text>
+  <text class="bandanalog" x="585" y="94">≈ GPT-3</text>
 
-  <!-- Stage 3 -->
-  <rect class="stage" x="490" y="50" width="200" height="260" rx="8"/>
-  <text class="stagenum" x="590" y="82">Stage 3</text>
-  <text class="stagelbl" x="590" y="102">Zero-shot abilities</text>
-  <text class="sub" x="590" y="122">~1M–10M seq · ~30–100B</text>
-  <line x1="505" y1="140" x2="675" y2="140" stroke="#a8c9ac" stroke-width="1"/>
-  <text class="itemhdr" x="505" y="162">What we check:</text>
-  <text class="item" x="505" y="184">3a: Zero-shot beats several</text>
-  <text class="item" x="515" y="200">reasonable baselines</text>
-  <text class="item" x="505" y="228">3b: Zero-shot elicitation</text>
-  <text class="item" x="515" y="244">success and PRBO beat</text>
-  <text class="item" x="515" y="260">in-domain stage 1 results</text>
+  <!-- Plateau reference line at v ≈ 0.7 (Stage-1 in-domain height) -->
+  <line class="plateau" x1="60" y1="138" x2="690" y2="138"/>
 
-  <!-- Arrows between stages -->
-  <path class="arr" d="M230,180 L260,180" marker-end="url(#arrowhead)"/>
-  <path class="arr" d="M460,180 L490,180" marker-end="url(#arrowhead)"/>
+  <!-- Curves (drawn over bands, under labels) -->
+  <!-- 1. Held-out loss: smooth descent across the whole range -->
+  <path class="loss" d="M 60,105 C 250,180 470,240 690,290"/>
+  <!-- 2. Individual-task success: sigmoid across Stage 1, plateau at ~0.7 -->
+  <path class="ind" d="M 60,318 C 160,318 160,145 260,145 L 690,145"/>
+  <!-- 3. Cross-task transfer: flat through Stage 1, sigmoid across Stage 2 to ~0.7 -->
+  <path class="ct" d="M 60,314 L 270,313 C 375,313 375,130 480,130 L 690,130"/>
+  <!-- 4. Zero-shot: flat through Stages 1 and 2, rises across Stage 3, ends above 0.7 -->
+  <path class="zs" d="M 60,315 L 480,314 C 585,314 585,105 690,105"/>
+
+  <!-- Curve labels at right end -->
+  <text class="curvelbl zsfill"   x="698" y="108">zero-shot beats in-domain</text>
+  <text class="curvelbl ctfill"   x="698" y="132">fine-tune beats Stage 1</text>
+  <text class="curvelbl indfill"  x="698" y="149">individual tasks</text>
+  <text class="curvelbl lossfill" x="698" y="293">held-out loss ↓ (smooth)</text>
+
+  <!-- Y-axis endpoints & title -->
+  <text class="yend" x="56" y="66">strong</text>
+  <text class="yend" x="56" y="322">no signal</text>
+  <text class="yaxistitle" transform="translate(24,190) rotate(-90)" x="0" y="0">downstream capability</text>
+
+  <!-- X-axis line & tick marks -->
+  <line class="axisline" x1="60" y1="320" x2="690" y2="320"/>
+  <line class="tickmark" x1="60"  y1="320" x2="60"  y2="326"/>
+  <line class="tickmark" x1="270" y1="320" x2="270" y2="326"/>
+  <line class="tickmark" x1="480" y1="320" x2="480" y2="326"/>
+  <line class="tickmark" x1="690" y1="320" x2="690" y2="326"/>
+
+  <!-- X-axis tick labels: sequences (top row) -->
+  <text class="axislbl" x="60"  y="338">10k seq</text>
+  <text class="axislbl" x="270" y="338">100k</text>
+  <text class="axislbl" x="480" y="338">1M</text>
+  <text class="axislbl" x="690" y="338">10M</text>
+
+  <!-- X-axis tick labels: params (bottom row) -->
+  <text class="axislbl" x="60"  y="354">1B params</text>
+  <text class="axislbl" x="270" y="354">8B</text>
+  <text class="axislbl" x="480" y="354">30B</text>
+  <text class="axislbl" x="690" y="354">100B</text>
+
+  <!-- X-axis title -->
+  <text class="axistitle" x="375" y="372">training scale (data × params, log)</text>
+
+  <!-- Stage tiles below the plot, aligned to bands -->
+  <rect class="tile" x="65"  y="386" width="200" height="55" rx="4"/>
+  <rect class="tile" x="275" y="386" width="200" height="55" rx="4"/>
+  <rect class="tile" x="485" y="386" width="200" height="55" rx="4"/>
+
+  <!-- Tile 1 -->
+  <text class="tilenum"   x="165" y="402">Stage 1</text>
+  <text class="tilescale" x="165" y="418">10k seq • 1B params • ≈ GPT-1</text>
+  <text class="tilegate indfill" x="165" y="435">→ some difficulty tier moves</text>
+
+  <!-- Tile 2 -->
+  <text class="tilenum"   x="375" y="402">Stage 2</text>
+  <text class="tilescale" x="375" y="418">100k seq • 8B params • ≈ GPT-2</text>
+  <text class="tilegate ctfill" x="375" y="435">→ fine-tune beats Stage 1</text>
+
+  <!-- Tile 3 -->
+  <text class="tilenum"   x="585" y="402">Stage 3</text>
+  <text class="tilescale" x="585" y="418">1–10M seq • 30–100B • ≈ GPT-3</text>
+  <text class="tilegate zsfill" x="585" y="435">→ zero-shot beats Stage 1 in-domain</text>
 </svg>
