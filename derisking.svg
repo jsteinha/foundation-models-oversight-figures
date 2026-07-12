@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 340" width="720" height="340" role="img" aria-label="Staged de-risking: three stages of scale-up (Stage 1 individual tasks, Stage 2 cross-task transfer, Stage 3 zero-shot) with what we check at each">
+  <style>
+    .stage { fill:#eaf6eb; stroke:#3d6342; stroke-width:1.4; }
+    .caption { font: 700 15px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+    .stagenum { font: 700 22px 'Helvetica Neue', Arial, sans-serif; fill:#3d6342; text-anchor:middle; }
+    .stagelbl { font: 600 13px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+    .sub { font: 400 11px 'Helvetica Neue', Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
+    .item { font: 400 11px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:start; }
+    .itemhdr { font: 600 11px 'Helvetica Neue', Arial, sans-serif; fill:#3d6342; text-anchor:start; }
+    .arr { stroke:#5b6770; stroke-width:1.4; fill:none; }
+  </style>
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/>
+    </marker>
+  </defs>
+
+  <text class="caption" x="360" y="24">Staged de-risking: what we check at each stage before scaling up</text>
+
+  <!-- Stage 1 -->
+  <rect class="stage" x="30" y="50" width="200" height="260" rx="8"/>
+  <text class="stagenum" x="130" y="82">Stage 1</text>
+  <text class="stagelbl" x="130" y="102">Individual tasks</text>
+  <text class="sub" x="130" y="122">~10k seq &middot; ~1&ndash;8B params</text>
+  <line x1="45" y1="140" x2="215" y2="140" stroke="#a8c9ac" stroke-width="1"/>
+  <text class="itemhdr" x="45" y="162">What we check:</text>
+  <text class="item" x="45" y="184">&bull; Held-out loss &darr; steadily</text>
+  <text class="item" x="45" y="206">&bull; Easy tasks: success rate &uarr;</text>
+  <text class="item" x="45" y="228">&bull; Medium tasks: PRBO &uarr;</text>
+  <text class="item" x="45" y="250">&bull; Hard tasks: PRBO starts</text>
+  <text class="item" x="55" y="266">to move</text>
+
+  <!-- Stage 2 -->
+  <rect class="stage" x="260" y="50" width="200" height="260" rx="8"/>
+  <text class="stagenum" x="360" y="82">Stage 2</text>
+  <text class="stagelbl" x="360" y="102">Cross-task transfer</text>
+  <text class="sub" x="360" y="122">~100k seq &middot; ~8&ndash;30B params</text>
+  <line x1="275" y1="140" x2="445" y2="140" stroke="#a8c9ac" stroke-width="1"/>
+  <text class="itemhdr" x="275" y="162">What we check:</text>
+  <text class="item" x="275" y="184">&bull; Training works on ~100 tasks</text>
+  <text class="item" x="275" y="206">&bull; Individual tasks learned</text>
+  <text class="item" x="275" y="228">&bull; Positive transfer:</text>
+  <text class="item" x="285" y="244">fine-tune beats stage 1</text>
+  <text class="item" x="275" y="266">&bull; Downstream metrics &uarr;</text>
+
+  <!-- Stage 3 -->
+  <rect class="stage" x="490" y="50" width="200" height="260" rx="8"/>
+  <text class="stagenum" x="590" y="82">Stage 3</text>
+  <text class="stagelbl" x="590" y="102">Zero-shot abilities</text>
+  <text class="sub" x="590" y="122">~1M&ndash;10M seq &middot; ~30&ndash;100B</text>
+  <line x1="505" y1="140" x2="675" y2="140" stroke="#a8c9ac" stroke-width="1"/>
+  <text class="itemhdr" x="505" y="162">What we check:</text>
+  <text class="item" x="505" y="184">3a: Zero-shot beats several</text>
+  <text class="item" x="515" y="200">reasonable baselines</text>
+  <text class="item" x="505" y="228">3b: Zero-shot elicitation</text>
+  <text class="item" x="515" y="244">success and PRBO beat</text>
+  <text class="item" x="515" y="260">in-domain stage 1 results</text>
+
+  <!-- Arrows between stages -->
+  <path class="arr" d="M230,180 L260,180" marker-end="url(#arrowhead)"/>
+  <path class="arr" d="M460,180 L490,180" marker-end="url(#arrowhead)"/>
+</svg>
