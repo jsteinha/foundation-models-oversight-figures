@@ -21,33 +21,33 @@
   <rect class="stage" x="30" y="50" width="200" height="260" rx="8"/>
   <text class="stagenum" x="130" y="82">Stage 1</text>
   <text class="stagelbl" x="130" y="102">Individual tasks</text>
-  <text class="sub" x="130" y="122">~10k seq &middot; ~1&ndash;8B params</text>
+  <text class="sub" x="130" y="122">~10k seq · ~1–8B params</text>
   <line x1="45" y1="140" x2="215" y2="140" stroke="#a8c9ac" stroke-width="1"/>
   <text class="itemhdr" x="45" y="162">What we check:</text>
-  <text class="item" x="45" y="184">&bull; Held-out loss &darr; steadily</text>
-  <text class="item" x="45" y="206">&bull; Easy tasks: success rate &uarr;</text>
-  <text class="item" x="45" y="228">&bull; Medium tasks: PRBO &uarr;</text>
-  <text class="item" x="45" y="250">&bull; Hard tasks: PRBO starts</text>
+  <text class="item" x="45" y="184">• Held-out loss ↓ steadily</text>
+  <text class="item" x="45" y="206">• Easy tasks: success rate ↑</text>
+  <text class="item" x="45" y="228">• Medium tasks: PRBO ↑</text>
+  <text class="item" x="45" y="250">• Hard tasks: PRBO starts</text>
   <text class="item" x="55" y="266">to move</text>
 
   <!-- Stage 2 -->
   <rect class="stage" x="260" y="50" width="200" height="260" rx="8"/>
   <text class="stagenum" x="360" y="82">Stage 2</text>
   <text class="stagelbl" x="360" y="102">Cross-task transfer</text>
-  <text class="sub" x="360" y="122">~100k seq &middot; ~8&ndash;30B params</text>
+  <text class="sub" x="360" y="122">~100k seq · ~8–30B params</text>
   <line x1="275" y1="140" x2="445" y2="140" stroke="#a8c9ac" stroke-width="1"/>
   <text class="itemhdr" x="275" y="162">What we check:</text>
-  <text class="item" x="275" y="184">&bull; Training works on ~100 tasks</text>
-  <text class="item" x="275" y="206">&bull; Individual tasks learned</text>
-  <text class="item" x="275" y="228">&bull; Positive transfer:</text>
+  <text class="item" x="275" y="184">• Training works on ~100 tasks</text>
+  <text class="item" x="275" y="206">• Individual tasks learned</text>
+  <text class="item" x="275" y="228">• Positive transfer:</text>
   <text class="item" x="285" y="244">fine-tune beats stage 1</text>
-  <text class="item" x="275" y="266">&bull; Downstream metrics &uarr;</text>
+  <text class="item" x="275" y="266">• Downstream metrics ↑</text>
 
   <!-- Stage 3 -->
   <rect class="stage" x="490" y="50" width="200" height="260" rx="8"/>
   <text class="stagenum" x="590" y="82">Stage 3</text>
   <text class="stagelbl" x="590" y="102">Zero-shot abilities</text>
-  <text class="sub" x="590" y="122">~1M&ndash;10M seq &middot; ~30&ndash;100B</text>
+  <text class="sub" x="590" y="122">~1M–10M seq · ~30–100B</text>
   <line x1="505" y1="140" x2="675" y2="140" stroke="#a8c9ac" stroke-width="1"/>
   <text class="itemhdr" x="505" y="162">What we check:</text>
   <text class="item" x="505" y="184">3a: Zero-shot beats several</text>
