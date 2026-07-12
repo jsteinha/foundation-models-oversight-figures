@@ -1,111 +1,149 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 445" width="860" height="445" role="img" aria-label="Staged de-risking: each stage turns on a new capability">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 570" width="860" height="570" role="img" aria-label="Staged de-risking: two axes — task-difficulty emergence within a stage, and distinct meta-capabilities across stages">
   <style>
-    .title { font: 700 16px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
-    .subtitle { font: 400 12px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
+    .title    { font: 700 16px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#1f2328; text-anchor:middle; }
+    .subtitle { font: 400 12px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#5b6770; text-anchor:middle; }
+    .panelhdr { font: 700 13px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#1f2328; text-anchor:start; }
+    .panelsub { font: 400 11.5px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#5b6770; text-anchor:start; }
+
     .axisline { stroke:#5b6770; stroke-width:1; fill:none; }
-    .tickmark { stroke:#5b6770; stroke-width:1; }
-    .axislbl { font: 400 10.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#3a4148; text-anchor:middle; }
-    .axistitle { font: 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#3a4148; text-anchor:middle; }
-    .yend { font: 400 10.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#6b7480; text-anchor:end; }
-    .yaxistitle { font: 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
-    .bandnum { font: 700 12.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
-    .bandanalog { font: italic 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#6b7480; text-anchor:middle; }
-    .plateau { fill:none; stroke:#8a95a2; stroke-width:1; stroke-dasharray:2,3; }
-    .loss { fill:none; stroke:#8a95a2; stroke-width:1.6; stroke-dasharray:5,4; stroke-linecap:round; }
-    .ind { fill:none; stroke:#3d8f6b; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
-    .ct  { fill:none; stroke:#3d708f; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
-    .zs  { fill:none; stroke:#3d5b8f; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
-    .curvelbl { font: 400 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; text-anchor:start; }
-    .indfill  { fill:#276b4d; }
-    .ctfill   { fill:#275970; }
-    .zsfill   { fill:#274670; }
+    .tick     { stroke:#5b6770; stroke-width:1; }
+    .axislbl  { font: 400 10.5px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#3a4148; text-anchor:middle; }
+    .yend     { font: 400 10.5px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#6b7480; text-anchor:end; }
+    .yaxistitle { font: 400 11px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#5b6770; text-anchor:middle; }
+
+    .curvelbl { font: 400 11px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; text-anchor:start; }
+    .loss     { fill:none; stroke:#8a95a2; stroke-width:1.7; stroke-dasharray:5,4; stroke-linecap:round; }
+    .easy     { fill:none; stroke:#d68d2e; stroke-width:2.3; stroke-linejoin:round; stroke-linecap:round; }
+    .med      { fill:none; stroke:#b8552a; stroke-width:2.3; stroke-linejoin:round; stroke-linecap:round; }
+    .hard     { fill:none; stroke:#7a3d68; stroke-width:2.3; stroke-linejoin:round; stroke-linecap:round; }
+    .easyfill { fill:#a56a1a; }
+    .medfill  { fill:#8a3f1a; }
+    .hardfill { fill:#5b2942; }
     .lossfill { fill:#5b6770; }
-    .tile { fill:#ffffff; stroke:#c9d0d6; stroke-width:1; }
-    .tilenum   { font: 700 12.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
-    .tilescale { font: 400 10.5px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; fill:#3a4148; text-anchor:middle; }
-    .tilegate  { font: 600 11px "DejaVu Sans", "Liberation Sans", "Helvetica Neue", Arial, sans-serif; text-anchor:middle; }
+
+    .stagebg1 { fill:#eaf6ea; stroke:#c4dcc8; stroke-width:1; }
+    .stagebg2 { fill:#e4f0f0; stroke:#bacdcd; stroke-width:1; }
+    .stagebg3 { fill:#e4ecf6; stroke:#bfcbdf; stroke-width:1; }
+    .stagenum { font: 700 15px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#1f2328; text-anchor:middle; }
+    .stagetag { font: italic 400 11px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#5b6770; text-anchor:middle; }
+    .stagediv { stroke:#c9d0d6; stroke-width:1; }
+    .sectlbl  { font: 700 10px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#6b7480; text-anchor:middle; letter-spacing: 0.08em; }
+    .scale    { font: 400 11.5px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#3a4148; text-anchor:middle; }
+    .metacap1 { font: 700 13px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#276b4d; text-anchor:middle; }
+    .metacap2 { font: 700 13px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#275970; text-anchor:middle; }
+    .metacap3 { font: 700 13px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#274670; text-anchor:middle; }
+    .metadesc { font: 400 11px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#3a4148; text-anchor:middle; }
+
+    .arrow     { fill:none; stroke:#5b6770; stroke-width:1.6; }
+    .arrowhead { fill:#5b6770; stroke:none; }
+    .arrowlbl  { font: 700 11px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#3a4148; text-anchor:middle; }
+    .arrowsub  { font: italic 400 10px "DejaVu Sans","Liberation Sans","Helvetica Neue",Arial,sans-serif; fill:#6b7480; text-anchor:middle; }
   </style>
 
-  <!-- Title & subtitle -->
-  <text class="title"    x="430" y="22">Staged de-risking: each stage turns on a new capability</text>
-  <text class="subtitle" x="430" y="40">We only scale up when the previous stage cleared its gate.</text>
+  <!-- ================= Overall title ================= -->
+  <text class="title"    x="430" y="22">Staged de-risking: two orthogonal axes</text>
+  <text class="subtitle" x="430" y="40">Within each stage, a task-difficulty spectrum emerges. Across stages, we check a distinct meta-capability.</text>
 
-  <!-- Stage bands (three decades of x, progressively deeper tints) -->
-  <rect x="60"  y="60" width="210" height="260" fill="#eaf6ea"/>
-  <rect x="270" y="60" width="210" height="260" fill="#e4f0f0"/>
-  <rect x="480" y="60" width="210" height="260" fill="#e4ecf6"/>
+  <!-- ================= Top panel: within-stage emergence ================= -->
+  <text class="panelhdr" x="60" y="72">Within a stage · task-difficulty spectrum turns on</text>
+  <text class="panelsub" x="60" y="88">Easy tasks emerge first, then medium; hard tasks only start to move. Aggregate held-out loss stays smooth throughout.</text>
 
-  <!-- Band labels at top of each band -->
-  <text class="bandnum"    x="165" y="78">Stage 1 • individual tasks</text>
-  <text class="bandanalog" x="165" y="94">≈ GPT-1</text>
-  <text class="bandnum"    x="375" y="78">Stage 2 • cross-task transfer</text>
-  <text class="bandanalog" x="375" y="94">≈ GPT-2</text>
-  <text class="bandnum"    x="585" y="78">Stage 3 • zero-shot</text>
-  <text class="bandanalog" x="585" y="94">≈ GPT-3</text>
+  <!-- Y-axis end labels & title -->
+  <text class="yend" x="86" y="108">strong</text>
+  <text class="yend" x="86" y="236">no signal</text>
+  <text class="yaxistitle" transform="translate(48,175) rotate(-90)" x="0" y="0">downstream capability</text>
 
-  <!-- Plateau reference line at v ≈ 0.7 (Stage-1 in-domain height) -->
-  <line class="plateau" x1="60" y1="138" x2="690" y2="138"/>
+  <!-- Plot area x=90..720, y=100..238 -->
 
-  <!-- Curves (drawn over bands, under labels) -->
-  <!-- 1. Held-out loss: smooth descent across the whole range -->
-  <path class="loss" d="M 60,105 C 250,180 470,240 690,290"/>
-  <!-- 2. Individual-task success: sigmoid across Stage 1, plateau at ~0.7 -->
-  <path class="ind" d="M 60,318 C 160,318 160,145 260,145 L 690,145"/>
-  <!-- 3. Cross-task transfer: flat through Stage 1, sigmoid across Stage 2 to ~0.7 -->
-  <path class="ct" d="M 60,314 L 270,313 C 375,313 375,130 480,130 L 690,130"/>
-  <!-- 4. Zero-shot: flat through Stages 1 and 2, rises across Stage 3, ends above 0.7 -->
-  <path class="zs" d="M 60,315 L 480,314 C 585,314 585,105 690,105"/>
+  <!-- Curves -->
+  <!-- Held-out loss: smooth descent, dashed gray -->
+  <path class="loss" d="M 90,115 C 280,175 480,215 720,232"/>
+  <!-- Easy tasks: emerge early -->
+  <path class="easy" d="M 90,228 C 160,228 190,120 285,120 L 720,120"/>
+  <!-- Medium tasks: emerge mid -->
+  <path class="med"  d="M 90,232 L 240,230 C 360,230 395,145 490,145 L 720,145"/>
+  <!-- Hard tasks: only start to move at end -->
+  <path class="hard" d="M 90,234 L 470,233 C 590,233 630,205 720,188"/>
 
-  <!-- Curve labels at right end -->
-  <text class="curvelbl zsfill"   x="698" y="108">zero-shot beats in-domain</text>
-  <text class="curvelbl ctfill"   x="698" y="132">fine-tune beats Stage 1</text>
-  <text class="curvelbl indfill"  x="698" y="149">individual tasks</text>
-  <text class="curvelbl lossfill" x="698" y="293">held-out loss ↓ (smooth)</text>
+  <!-- Curve labels (right end) -->
+  <text class="curvelbl easyfill" x="726" y="122">easy tasks</text>
+  <text class="curvelbl medfill"  x="726" y="148">medium tasks</text>
+  <text class="curvelbl hardfill" x="726" y="190">hard tasks</text>
+  <text class="curvelbl lossfill" x="726" y="234">held-out loss ↓</text>
 
-  <!-- Y-axis endpoints & title -->
-  <text class="yend" x="56" y="66">strong</text>
-  <text class="yend" x="56" y="322">no signal</text>
-  <text class="yaxistitle" transform="translate(24,190) rotate(-90)" x="0" y="0">downstream capability</text>
+  <!-- X-axis -->
+  <line class="axisline" x1="90"  y1="238" x2="720" y2="238"/>
+  <line class="tick"     x1="90"  y1="238" x2="90"  y2="243"/>
+  <line class="tick"     x1="720" y1="238" x2="720" y2="243"/>
+  <text class="axislbl"  x="405" y="257">training compute within stage (log)</text>
 
-  <!-- X-axis line & tick marks -->
-  <line class="axisline" x1="60" y1="320" x2="690" y2="320"/>
-  <line class="tickmark" x1="60"  y1="320" x2="60"  y2="326"/>
-  <line class="tickmark" x1="270" y1="320" x2="270" y2="326"/>
-  <line class="tickmark" x1="480" y1="320" x2="480" y2="326"/>
-  <line class="tickmark" x1="690" y1="320" x2="690" y2="326"/>
+  <!-- ================= Bottom panel: cross-stage meta-capabilities ================= -->
+  <text class="panelhdr" x="60" y="296">Across stages · each stage tests a distinct meta-capability</text>
+  <text class="panelsub" x="60" y="312">Every stage runs the emergence story above on that stage's tasks; each transition escalates scale and asks a new question.</text>
 
-  <!-- X-axis tick labels: sequences (top row) -->
-  <text class="axislbl" x="60"  y="338">10k seq</text>
-  <text class="axislbl" x="270" y="338">100k</text>
-  <text class="axislbl" x="480" y="338">1M</text>
-  <text class="axislbl" x="690" y="338">10M</text>
+  <!-- Stage boxes: y=328..548 (height 220).  Widths 210, gaps 55: 60..270, 325..535, 590..800 -->
+  <rect class="stagebg1" x="60"  y="328" width="210" height="220" rx="6"/>
+  <rect class="stagebg2" x="325" y="328" width="210" height="220" rx="6"/>
+  <rect class="stagebg3" x="590" y="328" width="210" height="220" rx="6"/>
 
-  <!-- X-axis tick labels: params (bottom row) -->
-  <text class="axislbl" x="60"  y="354">1B params</text>
-  <text class="axislbl" x="270" y="354">8B</text>
-  <text class="axislbl" x="480" y="354">30B</text>
-  <text class="axislbl" x="690" y="354">100B</text>
+  <!-- ========== Stage 1 box ========== -->
+  <text class="stagenum" x="165" y="353">Stage 1</text>
+  <text class="stagetag" x="165" y="370">≈ GPT-1</text>
+  <line class="stagediv" x1="80"  y1="384" x2="250" y2="384"/>
 
-  <!-- X-axis title -->
-  <text class="axistitle" x="375" y="372">training scale (data × params, log)</text>
+  <text class="sectlbl"   x="165" y="401">SCALE</text>
+  <text class="scale"     x="165" y="420">1 task at a time</text>
+  <text class="scale"     x="165" y="437">~10k seq · ~1–8B params</text>
+  <line class="stagediv"  x1="80"  y1="452" x2="250" y2="452"/>
 
-  <!-- Stage tiles below the plot, aligned to bands -->
-  <rect class="tile" x="65"  y="386" width="200" height="55" rx="4"/>
-  <rect class="tile" x="275" y="386" width="200" height="55" rx="4"/>
-  <rect class="tile" x="485" y="386" width="200" height="55" rx="4"/>
+  <text class="sectlbl"   x="165" y="469">META-CAPABILITY CHECKED</text>
+  <text class="metacap1"  x="165" y="491">In-domain learning works</text>
+  <text class="metadesc"  x="165" y="512">Mid-training on one task</text>
+  <text class="metadesc"  x="165" y="527">produces the emergence</text>
+  <text class="metadesc"  x="165" y="542">curves shown above.</text>
 
-  <!-- Tile 1 -->
-  <text class="tilenum"   x="165" y="402">Stage 1</text>
-  <text class="tilescale" x="165" y="418">10k seq • 1B params • ≈ GPT-1</text>
-  <text class="tilegate indfill" x="165" y="435">→ some difficulty tier moves</text>
+  <!-- ========== Stage 2 box ========== -->
+  <text class="stagenum" x="430" y="353">Stage 2</text>
+  <text class="stagetag" x="430" y="370">≈ GPT-2</text>
+  <line class="stagediv" x1="345" y1="384" x2="515" y2="384"/>
 
-  <!-- Tile 2 -->
-  <text class="tilenum"   x="375" y="402">Stage 2</text>
-  <text class="tilescale" x="375" y="418">100k seq • 8B params • ≈ GPT-2</text>
-  <text class="tilegate ctfill" x="375" y="435">→ fine-tune beats Stage 1</text>
+  <text class="sectlbl"   x="430" y="401">SCALE</text>
+  <text class="scale"     x="430" y="420">~100 tasks jointly</text>
+  <text class="scale"     x="430" y="437">~100k seq · ~8–30B params</text>
+  <line class="stagediv"  x1="345" y1="452" x2="515" y2="452"/>
 
-  <!-- Tile 3 -->
-  <text class="tilenum"   x="585" y="402">Stage 3</text>
-  <text class="tilescale" x="585" y="418">1–10M seq • 30–100B • ≈ GPT-3</text>
-  <text class="tilegate zsfill" x="585" y="435">→ zero-shot beats Stage 1 in-domain</text>
+  <text class="sectlbl"   x="430" y="469">META-CAPABILITY CHECKED</text>
+  <text class="metacap2"  x="430" y="491">Positive cross-task transfer</text>
+  <text class="metadesc"  x="430" y="512">Joint mid-train + fine-tune</text>
+  <text class="metadesc"  x="430" y="527">on any one task beats</text>
+  <text class="metadesc"  x="430" y="542">Stage 1's in-domain result.</text>
+
+  <!-- ========== Stage 3 box ========== -->
+  <text class="stagenum" x="695" y="353">Stage 3</text>
+  <text class="stagetag" x="695" y="370">≈ GPT-3</text>
+  <line class="stagediv" x1="610" y1="384" x2="780" y2="384"/>
+
+  <text class="sectlbl"   x="695" y="401">SCALE</text>
+  <text class="scale"     x="695" y="420">distribution over tasks</text>
+  <text class="scale"     x="695" y="437">~1M–10M seq · ~30–100B</text>
+  <line class="stagediv"  x1="610" y1="452" x2="780" y2="452"/>
+
+  <text class="sectlbl"   x="695" y="469">META-CAPABILITY CHECKED</text>
+  <text class="metacap3"  x="695" y="491">Zero-shot transfer</text>
+  <text class="metadesc"  x="695" y="512">Without fine-tuning, new</text>
+  <text class="metadesc"  x="695" y="527">tasks beat Stage 1's</text>
+  <text class="metadesc"  x="695" y="542">in-domain elicitation results.</text>
+
+  <!-- ========== Arrows between stages (mid-box, y=442) ========== -->
+  <!-- Arrow 1 → 2 (gap 270..325, center 297.5) -->
+  <text class="arrowlbl" x="297.5" y="430">×10</text>
+  <line class="arrow"      x1="278" y1="442" x2="316" y2="442"/>
+  <polygon class="arrowhead" points="316,438 322,442 316,446"/>
+  <text class="arrowsub" x="297.5" y="458">add joint</text>
+
+  <!-- Arrow 2 → 3 (gap 535..590, center 562.5) -->
+  <text class="arrowlbl" x="562.5" y="430">×10–100</text>
+  <line class="arrow"      x1="543" y1="442" x2="581" y2="442"/>
+  <polygon class="arrowhead" points="581,438 587,442 581,446"/>
+  <text class="arrowsub" x="562.5" y="458">drop fine-tune</text>
 </svg>
