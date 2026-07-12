@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 320" width="780" height="320" role="img" aria-label="Engineering scale-up pipeline">
+  <style>
+    .box { fill:#f5f7fa; stroke:#5b6770; stroke-width:1.2; }
+    .stage { fill:#eaf6eb; stroke:#3d6342; stroke-width:1.2; }
+    .lbl { font: 600 13px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+    .sub { font: 400 11px 'Helvetica Neue', Arial, sans-serif; fill:#5b6770; text-anchor:middle; }
+    .arr { stroke:#5b6770; stroke-width:1.4; fill:none; }
+    .caption { font: 700 14px 'Helvetica Neue', Arial, sans-serif; fill:#1f2328; text-anchor:middle; }
+  </style>
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#5b6770"/>
+    </marker>
+  </defs>
+
+  <text class="caption" x="390" y="24">Engineering scale-up: data generation, then staged de-risking</text>
+
+  <!-- Top row: data pipeline -->
+  <rect class="box" x="20"  y="60" width="110" height="70" rx="6"/>
+  <text class="lbl" x="75"  y="90">arXiv papers</text>
+  <text class="sub" x="75"  y="108">(science of ML)</text>
+  <text class="sub" x="75"  y="122">~10k papers</text>
+
+  <rect class="box" x="170" y="60" width="120" height="70" rx="6"/>
+  <text class="lbl" x="230" y="86">LM writes</text>
+  <text class="lbl" x="230" y="103">Python scripts</text>
+  <text class="sub" x="230" y="120">~10 per paper</text>
+
+  <rect class="box" x="330" y="60" width="130" height="70" rx="6"/>
+  <text class="lbl" x="395" y="86">Sample inputs;</text>
+  <text class="lbl" x="395" y="103">run vs. subject S</text>
+  <text class="sub" x="395" y="120">~10k inputs each</text>
+
+  <rect class="box" x="500" y="60" width="130" height="70" rx="6"/>
+  <text class="lbl" x="565" y="86">Mid-training</text>
+  <text class="lbl" x="565" y="103">corpus</text>
+  <text class="sub" x="565" y="120">~1T tokens</text>
+
+  <rect class="box" x="670" y="60" width="90"  height="70" rx="6"/>
+  <text class="lbl" x="715" y="90">Oversight</text>
+  <text class="lbl" x="715" y="107">foundation</text>
+  <text class="sub" x="715" y="122">model</text>
+
+  <path class="arr" d="M130,95 L170,95" marker-end="url(#arrowhead)"/>
+  <path class="arr" d="M290,95 L330,95" marker-end="url(#arrowhead)"/>
+  <path class="arr" d="M460,95 L500,95" marker-end="url(#arrowhead)"/>
+  <path class="arr" d="M630,95 L670,95" marker-end="url(#arrowhead)"/>
+
+  <!-- Bottom row: de-risking stages -->
+  <rect class="stage" x="170" y="220" width="130" height="60" rx="6"/>
+  <text class="lbl" x="235" y="246">Stage 1</text>
+  <text class="sub" x="235" y="263">individual tasks</text>
+
+  <rect class="stage" x="330" y="220" width="130" height="60" rx="6"/>
+  <text class="lbl" x="395" y="246">Stage 2</text>
+  <text class="sub" x="395" y="263">cross-task transfer</text>
+
+  <rect class="stage" x="500" y="220" width="130" height="60" rx="6"/>
+  <text class="lbl" x="565" y="246">Stage 3</text>
+  <text class="sub" x="565" y="263">zero-shot</text>
+
+  <path class="arr" d="M300,250 L330,250" marker-end="url(#arrowhead)"/>
+  <path class="arr" d="M460,250 L500,250" marker-end="url(#arrowhead)"/>
+
+  <!-- Connector: de-risking evaluates the model -->
+  <path class="arr" d="M630,250 C680,250 715,220 715,145" marker-end="url(#arrowhead)"/>
+  <text class="sub" x="705" y="200" text-anchor="end">staged de-risking</text>
+  <text class="sub" x="705" y="214" text-anchor="end">validates the model</text>
+</svg>
