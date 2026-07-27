@@ -41,8 +41,8 @@
   </style>
 
   <!-- ================= Overall title ================= -->
-  <text class="title"    x="430" y="22">Staged de-risking: two orthogonal axes</text>
-  <text class="subtitle" x="430" y="40">Within each stage, a task-difficulty spectrum emerges. Across stages, we check a distinct meta-capability.</text>
+  <text class="title"    x="430" y="22">Staged de-risking</text>
+  <text class="subtitle" x="430" y="40">Within each stage, task-specific capabilities emerge as we scale. Across stages, new meta-capabilities emerge.</text>
 
   <!-- ================= Top panel: within-stage emergence ================= -->
   <text class="panelhdr" x="60" y="72">Within a stage · task-difficulty spectrum turns on</text>
