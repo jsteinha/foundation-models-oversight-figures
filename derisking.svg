@@ -48,9 +48,7 @@
   <text class="panelhdr" x="60" y="72">Within a stage · task-difficulty spectrum turns on</text>
   <text class="panelsub" x="60" y="88">Easy tasks emerge first, then medium; hard tasks only start to move. Aggregate held-out loss stays smooth throughout.</text>
 
-  <!-- Y-axis end labels & title -->
-  <text class="yend" x="86" y="108">strong</text>
-  <text class="yend" x="86" y="236">no signal</text>
+  <!-- Y-axis title -->
   <text class="yaxistitle" transform="translate(48,175) rotate(-90)" x="0" y="0">downstream capability</text>
 
   <!-- Plot area x=90..720, y=100..238 -->
